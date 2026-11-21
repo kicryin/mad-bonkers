@@ -243,17 +243,20 @@ h1, h2, h3 { font-family: var(--head); font-weight: 400; line-height: 1.1; margi
 }
 .download__card h2 { font-size: clamp(32px, 6vw, 52px); }
 .download__card p { font-size: 18px; margin: 14px auto 32px; max-width: 480px; opacity: .9; }
-.gplay {
+.store {
   display: inline-flex; align-items: center; gap: 14px;
-  background: #000; color: #fff; padding: 12px 26px 12px 20px; border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.4);
+  background: #0077ff; color: #fff; padding: 12px 28px 12px 14px; border-radius: 16px;
+  box-shadow: 0 6px 0 #0050b3, 0 14px 30px rgba(0, 40, 120, .4);
   transition: transform .15s, box-shadow .15s;
 }
-.gplay:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.45); }
-.gplay:active { transform: scale(.97); }
-.gplay svg { width: 30px; height: 32px; }
-.gplay span { display: flex; flex-direction: column; text-align: left; font: 500 24px/1.05 var(--body); }
-.gplay small { font-size: 11px; letter-spacing: .5px; }
+.store:hover { transform: translateY(-3px); }
+.store:active { transform: scale(.97); }
+.store svg {
+  width: 44px; height: 44px; padding: 9px; border-radius: 12px;
+  background: rgba(255,255,255,.18);
+}
+.store span { display: flex; flex-direction: column; text-align: left; font: 700 24px/1.05 var(--body); }
+.store small { font-size: 11px; font-weight: 500; letter-spacing: .8px; opacity: .85; }
 
 /* ---------- Подвал ---------- */
 .footer {

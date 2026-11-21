@@ -1,9 +1,10 @@
 // ========== НАСТРОЙКИ ==========
-// Вставь сюда ссылку на свою игру в Google Play:
-const PLAY_URL = "https://play.google.com/store/apps/details?id=com.example.madbonkers";
+// Вставь сюда ссылку на свою игру в RuStore
+// (формат: https://www.rustore.ru/catalog/app/ИМЯ_ПАКЕТА):
+const STORE_URL = "https://www.rustore.ru/catalog/app/com.example.madbonkers";
 
-// Все кнопки «Скачать» ведут в Google Play
-document.querySelectorAll(".js-play").forEach(a => (a.href = PLAY_URL));
+// Все кнопки «Скачать» ведут в RuStore
+document.querySelectorAll(".js-play").forEach(a => (a.href = STORE_URL));
 
 // Если картинки в папке assets ещё нет — показываем красивую заглушку
 document.querySelectorAll(".js-img").forEach(img => {
