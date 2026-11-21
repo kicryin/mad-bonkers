@@ -1,7 +1,7 @@
 // ========== НАСТРОЙКИ ==========
 // Вставь сюда ссылку на свою игру в RuStore
 // (формат: https://www.rustore.ru/catalog/app/ИМЯ_ПАКЕТА):
-const STORE_URL = "https://www.rustore.ru/catalog/app/com.example.madbonkers";
+const STORE_URL = "https://www.rustore.ru/catalog/app/ru.madbonkers.game";
 
 // Все кнопки «Скачать» ведут в RuStore
 document.querySelectorAll(".js-play").forEach(a => (a.href = STORE_URL));
