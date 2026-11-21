@@ -197,7 +197,15 @@ h1, h2, h3 { font-family: var(--head); font-weight: 400; line-height: 1.1; margi
   box-shadow: 0 12px 30px color-mix(in srgb, var(--c) 40%, transparent);
   font-size: 72px; overflow: hidden;
 }
-.char__pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.char__pic img {
+  position: absolute; inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px);
+  object-fit: contain; z-index: 1;
+  filter: drop-shadow(0 6px 6px rgba(0,0,0,.25));
+  transition: transform .25s;
+}
+.char:hover .char__pic img { transform: scale(1.08) rotate(-4deg); }
+.char__pic:has(img) span { display: none; }
+.char__pic { background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--c) 35%, white), color-mix(in srgb, var(--c) 60%, white)); }
 .char h3 { font-size: 26px; }
 .char__role { color: var(--c); font-weight: 700; margin: 4px 0 10px; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
 .char p:last-child { margin: 0; color: var(--muted); font-size: 15px; }
@@ -210,19 +218,25 @@ h1, h2, h3 { font-family: var(--head); font-weight: 400; line-height: 1.1; margi
   padding: 10px 4px 24px; scrollbar-width: none;
 }
 .gallery::-webkit-scrollbar { display: none; }
+/* Горизонтальные кадры 16:9 одной высоты; вертикальный (.shot--tall) — той же высоты, но уже */
 .shot {
-  flex: 0 0 auto; width: clamp(200px, 60vw, 260px); aspect-ratio: 9 / 19; margin: 0;
+  --h: clamp(180px, 48vw, 380px);
+  flex: 0 0 auto; height: var(--h); aspect-ratio: 16 / 9; margin: 0;
+  max-width: calc(100vw - 56px);
   position: relative; scroll-snap-align: center;
-  border-radius: 28px; overflow: hidden;
-  border: 6px solid #0d0518;
-  background: linear-gradient(160deg, var(--card), var(--violet));
+  border-radius: 20px; overflow: hidden;
+  border: 5px solid #0d0518;
+  background: var(--card);
   box-shadow: 0 16px 40px rgba(0,0,0,.45);
-  display: grid; place-items: center;
 }
-.shot:nth-child(2n) { background: linear-gradient(160deg, var(--card), var(--pink)); }
-.shot:nth-child(3n) { background: linear-gradient(160deg, var(--card), #1f8f6a); }
-.shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
-.shot span { color: rgba(255,255,255,.6); font-weight: 500; }
+.shot--tall { aspect-ratio: 9 / 16; }
+.shot img { width: 100%; height: 100%; object-fit: cover; }
+.shot figcaption {
+  position: absolute; left: 10px; bottom: 10px;
+  padding: 4px 12px; border-radius: 999px;
+  background: rgba(13, 5, 24, .75); backdrop-filter: blur(6px);
+  font-size: 13px; font-weight: 700;
+}
 .gallery__btn {
   position: absolute; top: 50%; z-index: 2; translate: 0 -50%;
   width: 48px; height: 48px; border-radius: 50%; border: 0; cursor: pointer;
